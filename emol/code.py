@@ -1,9 +1,9 @@
 import os
 
-import sklearn
+from sklearn import linear_model
 import pandas as pd
 
-data_path=os.path.join(__path__[0],'data')
+data_path=os.path.join(os.path.dirname(__file__),'data')
 
 def potential(Type,X):
     data=pd.read_csv(os.path.join(data_path,'data.csv'))
@@ -24,7 +24,7 @@ def potential(Type,X):
     F=df['F'].values
     CF3=df['CF3'].values
     
-    model = LinearRegression(normalize=True)  
+    model = linear_model.LinearRegression(normalize=True)  
     model.fit(x, y)
     
     y_fit = model.predict(X)
