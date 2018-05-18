@@ -1,8 +1,12 @@
+import os
+
 import sklearn
 import pandas as pd
 
+data_path=os.path.join(__path__[0],'data')
+
 def potential(Type,X):
-    data=pd.read_csv('/Users/kanchan/Documents/data.csv')
+    data=pd.read_csv(os.path.join(data_path,'data.csv'))
     
     df1=data.iloc[0:10]
     df2=data.iloc[10:]
